@@ -13,7 +13,13 @@
 </head>
 <body>
 <div id="app">
-
+    <ol>
+        <todo-item
+            v-for="item in barangBelanjaan"
+            v-bind:todo="item"
+            v-bind:key="item.id">
+        </todo-item>
+    
     <header> 
         <img src="image/OIP (6).jpeg" width="80">
         <h1>What is Flower</h1>
@@ -23,18 +29,25 @@
     <footer id="footer">
         <p>copyright 2023</p>
     </footer>
+</ol>
 </div>   
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
-      const vm =  new Vue({
-        el: '#app',
-        data: {
-            // string, number, boolean, array, object
-            name : 'Ulya nafisatussaniyah',
-            message :'Hello welcome to my journay',
+       Vue.component('todo-item', {
+        props: ['todo'] ,
+        template: '<li>{{ todo.barang }}</li>'
+})
 
-        }
-      })
+var app = new Vue({
+  el: '#app',
+  data: {
+    barangBelanjaan: [
+        {id: 0, barang: 'Sayuran'},
+        {id: 1, barang: 'Cokelat'},
+        {id: 2, barang: 'Other'}
+    ]
+  }
+}) 
     </script>
 </body>
 </html>
