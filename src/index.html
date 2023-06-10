@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs</title>
+    <style>
+        body {
+            margin: 5%;
+            font-family: 'Quicksand' , sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+
+    <header> 
+        <img src="image/OIP (6).jpeg" width="80">
+        <h1>What is Flower</h1>
+        <p>Flower is Beautiful</p>
+    </header>
+
+    <footer id="footer">
+        <p>copyright 2023</p>
+    </footer>
+</div>   
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const vm =  new Vue({
+        el: '#app',
+        data: {
+            // string, number, boolean, array, object
+            name : 'Ulya nafisatussaniyah',
+            message :'Hello welcome to my journay',
+
+        }
+      })
+    </script>
+</body>
+</html>
