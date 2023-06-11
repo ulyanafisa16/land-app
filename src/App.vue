@@ -1,5 +1,6 @@
 <template>
   <h2> Nama: {{ nama }} </h2>
+  <button v-on:click="changeName">Change Name</button>
 </template>
 
 <script>
@@ -9,8 +10,13 @@ export default {
   data(){
     return{
       nama: "Ulya Nafis"
-    }
-  }
+    };
+  },
+  methods:{
+    changeName() {
+      this.nama = "Nafisa";
+    },
+  },
 };
 </script>
 
