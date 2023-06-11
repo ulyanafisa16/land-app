@@ -1,6 +1,6 @@
 <template>
-  <h2> Nama: {{ nama }} </h2>
-  <button v-on:click="changeName">Change Name</button>
+  
+  <a v-bind:href="url">Go to Ulya</a>
 </template>
 
 <script>
@@ -9,13 +9,9 @@ export default {
   name : "App",
   data(){
     return{
-      nama: "Ulya Nafis"
+      
+      url : "https://github.com/ulyanafisa16?tab=repositories",
     };
-  },
-  methods:{
-    changeName() {
-      this.nama = "Nafisa";
-    },
   },
 };
 </script>
