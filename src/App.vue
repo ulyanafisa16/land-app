@@ -1,10 +1,18 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <h2> Nama: {{ nama }} </h2>
 </template>
+
+<script>
+
+export default {
+  name : "App",
+  data(){
+    return{
+      nama: "Ulya Nafis"
+    }
+  }
+};
+</script>
 
 <style lang="scss">
 #app {
