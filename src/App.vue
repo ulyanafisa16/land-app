@@ -1,5 +1,8 @@
 <template>
-  <!--conditional and looping-->
+  <!--Lifecycle Hooks-->
+
+
+  conditional and looping
   <div v-if="products.length">
   <ul>
     <li v-for="item in products" :key="item.id">
@@ -10,6 +13,7 @@
 <div v-else>
   <p>No data found</p>
 </div>
+
   <!--to way binding --> 
   <!-- <input type="text" v-model="nama">
   {{ nama }} -->
@@ -31,13 +35,13 @@ export default {
       // url : "https://github.com/ulyanafisa16?tab=repositories",
       // nama : "naff" ,
       products:[
-        {id: 1, title:"Product 1", price:3000},
-        {id: 2, title:"Product 2", price:5000},
-        {id: 3, title:"Product 3", price:7000},
-        {id: 4, title:"Product 4", price:4000},
-        {id: 5, title:"Product 5", price:8000},
-        {id: 6, title:"Product 6", price:9000},
-        {id: 7, title:"Product 7", price:2000}
+        // {id: 1, title:"Product 1", price:3000},
+        // {id: 2, title:"Product 2", price:5000},
+        // {id: 3, title:"Product 3", price:7000},
+        // {id: 4, title:"Product 4", price:4000},
+        // {id: 5, title:"Product 5", price:8000},
+        // {id: 6, title:"Product 6", price:9000},
+        // {id: 7, title:"Product 7", price:2000}
       ]
     };
   },
@@ -46,6 +50,26 @@ export default {
   //     this.nama = "Nafisa";
   //   },
   // },
+
+  //lifecycle and Hooks
+  beforeCreate(){
+    console.log('Before Create')
+  },
+  created(){
+    this.products = [{id: 1, title:"Product 1", price:3000},
+        {id: 2, title:"Product 2", price:5000},
+        {id: 3, title:"Product 3", price:7000},
+        {id: 4, title:"Product 4", price:4000},
+        {id: 5, title:"Product 5", price:8000},
+        {id: 6, title:"Product 6", price:9000},
+        {id: 7, title:"Product 7", price:2000}];
+  },
+  beforeMount(){
+    console.log('Before Mount')
+  },
+  mounted(){
+    console.log('Mounted')
+  },
 };
 </script>
 
