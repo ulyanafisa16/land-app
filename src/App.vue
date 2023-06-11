@@ -1,6 +1,12 @@
 <template>
-  
-  <a v-bind:href="url">Go to Ulya</a>
+  <!--to way binding --> 
+  <input type="text" v-model="nama">
+  {{ nama }}
+  <!-- <h2> Nama: {{ nama }} </h2>
+  <button v-on:click="changeName">Change Name</button> -->
+  <!-- data binding -->
+  <!-- <a v-bind:href="url">Go to Ulya</a> -->
+  <!-- <a :href="url">Go to Ulya</a> -->
 </template>
 
 <script>
@@ -9,10 +15,16 @@ export default {
   name : "App",
   data(){
     return{
-      
+      // nama: "Ulya Nafis"
       url : "https://github.com/ulyanafisa16?tab=repositories",
+      nama : "naff" ,
     };
   },
+  // methods:{
+  //   changeName() {
+  //     this.nama = "Nafisa";
+  //   },
+  // },
 };
 </script>
 
