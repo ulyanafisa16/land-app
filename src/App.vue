@@ -1,11 +1,13 @@
 <template>
+<Header/>
+</template>
   <!--computed properti-->
-  <input type="text" v-model="cari" placeholder="Cari">
+  <!-- <input type="text" v-model="cari" placeholder="Cari">
   <ul>
     <li v-for="item in cariData" :key="item.id">
     {{ item.title }} - {{ item.price }}
     </li>
-  </ul>
+  </ul> -->
 
   <!--conditional and looping-->
   <!-- <div v-if="products.length">
@@ -29,18 +31,25 @@
   <!-- data binding -->
   <!-- <a v-bind:href="url">Go to Ulya</a> -->
   <!-- <a :href="url">Go to Ulya</a> -->
-</template>
+
 
 <script>
+
+import Header from "@/components/Header.vue"
+
 export default {
   name : "App",
-  data(){
-    return {
-      cari:"",
-      // nama: "Ulya Nafis"
-      // url : "https://github.com/ulyanafisa16?tab=repositories",
-      // nama : "naff" ,
-      products:[],
+  components: {
+    Header,
+  }
+};
+  // data(){
+  //   return {
+      // cari:"",
+      // // nama: "Ulya Nafis"
+      // // url : "https://github.com/ulyanafisa16?tab=repositories",
+      // // nama : "naff" ,
+      // products:[],
         // {id: 1, title:"Product 1", price:3000},
         // {id: 2, title:"Product 2", price:5000},
         // {id: 3, title:"Product 3", price:7000},
@@ -49,8 +58,8 @@ export default {
         // {id: 6, title:"Product 6", price:9000},
         // {id: 7, title:"Product 7", price:2000}
      
-    };
-  },
+    // };
+  
   // methods:{
   //   changeName() {
   //     this.nama = "Nafisa";
@@ -61,52 +70,36 @@ export default {
   // beforeCreate(){
   //   console.log('Before Create')
   // },
-  created(){
-    this.products = [
-        {id: 1, title:"Product 1", price:3000},
-        {id: 2, title:"Product 2", price:5000},
-        {id: 3, title:"Product 3", price:7000},
-        {id: 4, title:"Product 4", price:4000},
-        {id: 5, title:"Product 5", price:8000},
-        {id: 6, title:"Product 6", price:9000},
-        {id: 7, title:"Product 7", price:2000},
-      ];
-  },
-  computed:{
-    cariData(){
-       return this.products.filter((item)=>{
-        return item.title.match(this.cari);
-       });
-    }
-  }
-  // beforeMount(){
-  //   console.log('Before Mount')
+
+  // componen computed
+  // created(){
+  //   this.products = [
+  //       {id: 1, title:"Product 1", price:3000},
+  //       {id: 2, title:"Product 2", price:5000},
+  //       {id: 3, title:"Product 3", price:7000},
+  //       {id: 4, title:"Product 4", price:4000},
+  //       {id: 5, title:"Product 5", price:8000},
+  //       {id: 6, title:"Product 6", price:9000},
+  //       {id: 7, title:"Product 7", price:2000},
+  //     ];
+  // },
+  // computed:{
+  //   cariData(){
+  //      return this.products.filter((item)=>{
+  //       return item.title.match(this.cari);
+  //      });
+  //   }
+  // }
+
+
+  // // beforeMount(){
+  // //   console.log('Before Mount')
   // },
   // mounted(){
   //   console.log('Mounted')
   // },
-};
+
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+<style >
 </style>
