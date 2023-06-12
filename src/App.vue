@@ -1,6 +1,6 @@
 <template>
-<Header/>
-</template>
+<Header  :text="text"  />
+
   <!--computed properti-->
   <!-- <input type="text" v-model="cari" placeholder="Cari">
   <ul>
@@ -32,15 +32,20 @@
   <!-- <a v-bind:href="url">Go to Ulya</a> -->
   <!-- <a :href="url">Go to Ulya</a> -->
 
-
+</template>
 <script>
 
+//cara mengimport component
 import Header from "@/components/Header.vue"
-
 export default {
   name : "App",
   components: {
     Header,
+  },
+  data(){
+    return {
+      text: "ini adalah text dari data"
+    }
   }
 };
   // data(){
