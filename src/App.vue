@@ -1,5 +1,5 @@
 <template>
-<Header  :text="text"  />
+<Header @changeTitle="ubahText" :text="text"  />
 
   <!--computed properti-->
   <!-- <input type="text" v-model="cari" placeholder="Cari">
@@ -45,6 +45,11 @@ export default {
   data(){
     return {
       text: "ini adalah text dari data"
+    };
+  },
+  methods:{
+    ubahText(newText){
+      this.text = newText;
     }
   }
 };
