@@ -1,6 +1,31 @@
 <template>
+
+
+<header class="header">
+  <nav class="navbar" id="navbar">
+        
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a onclick="darkMode()"><i class='bx bx-adjust'></i></a>
+        
+    </nav> 
+        
+</header>
+
+<section class="home" id="home">
+
 <Header @changeTitle="ubahText" :text="text"  />
 
+<img  alt="" src="./assets/gambar.png">
+<div class="shake">
+<button @click="warnDisabled">Click me</button>
+<span v-if="disabled">This feature is disabled!</span>
+</div>
+
+</section >
   <!--computed properti-->
   <!-- <input type="text" v-model="cari" placeholder="Cari">
   <ul>
@@ -51,8 +76,16 @@ export default {
     ubahText(newText){
       this.text = newText;
     }
-  }
+  },
+
 };
+
+
+
+
+
+
+
   // data(){
   //   return {
       // cari:"",
@@ -112,4 +145,54 @@ export default {
 </script>
 
 <style >
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'poppins', sans-serif;
+}
+
+.header{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    padding: 2rem 9%;
+    background-color: rgb(154, 106, 47);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar a{
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: .3s;
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+.shake {
+  display: inline-block;
+    padding:  1rem 2.8rem;
+    background-color: rgb(41, 142, 142);
+    border-radius: 5rem;
+    box-shadow: 2 4 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--second-bg-color);
+    letter-spacing: .2rem;
+    font-weight: 900;
+    transition: .5s ease;
+}
+
+
+
 </style>
